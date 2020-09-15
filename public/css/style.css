@@ -6,6 +6,39 @@
 */
 
 /*======================================
+//--//-->   INTRO
+======================================*/
+.btn {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  text-decoration: none;
+  font: inherit;
+  border: 1px solid #00695c;
+  color: #00695c;
+  background: rgb(250, 250, 220);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.quotes-list-quote {
+  color: rgb(250,250,220);
+  font-family: 'Poor Story', cursive;
+  font-size: 35px;
+}
+
+.btn {
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: .3rem;
+}
+
+.quotes-list-source {
+  color: rgb(245,222,179);
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 30px;
+}
+/*======================================
 //--//-->   STYLES GENERALES
 ======================================*/
 
@@ -29,7 +62,7 @@ a {
 }
 
 a:hover {
-  color: #0078ff;
+  color: rgb(250,250,220);
   text-decoration: none;
   transition: all 0.5s ease-in-out;
 }
