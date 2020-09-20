@@ -1,7 +1,7 @@
 <%- include('../includes/head.ejs') %>
   </head>
 
-  <%- include('../includes/navigation.ejs') %>
+  <%- include('../includes/index-navigation.ejs') %>
   
   <body id="page-top">
   <% if (quotes.length > 0 ) { %> 
@@ -11,11 +11,11 @@
       <div class="intro-content display-table">
         <div class="table-cell">
           <div class="container">
-            <a href="/<%= quote._id%>" class="quotes-list-quote"> <%= quote.quote %> </a>
+            <a href="/quotes-list/<%= quote._id%>" class="quotes-list-quote"> <%= quote.quote %> </a>
             <br>
-            <a href="/<%= quote._id%>" class="quotes-list-source"> <%= quote.source %> </a>
+            <a href="/quotes-list/<%= quote._id%>" class="quotes-list-source"> <%= quote.source %> </a>
           </div>
-          <a href="/<%= quote._id%>" class="btn">Details</a>
+          <a href="/quotes-list/<%= quote._id%>" class="btn">Details</a>
         </div>
       </div>
     </div>
