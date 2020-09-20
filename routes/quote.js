@@ -9,8 +9,18 @@ const router = express.Router();
 
 router.get('/', quoteController.getIndex);
 
+router.get('/quotes-list/:quoteId', quoteController.getQuote);
+
 router.get('/quotes-list', quoteController.getQuotesList);
 
-router.get('/:quoteId', quoteController.getQuote);
+router.get('/add-quote', quoteController.getAddQuote);
+
+router.post('/add-quote', quoteController.postAddQuote);
+
+router.get('/edit-quote/:quoteId', quoteController.getEditQuote);
+
+router.post('/edit-quote', quoteController.postEditQuote);
+
+router.get('/search-quotes', quoteController.getSearchQuotes);
 
 module.exports = router;

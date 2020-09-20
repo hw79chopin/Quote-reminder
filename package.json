@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-uncss": "^0.9.1",
     "nodemon": "^2.0.4"
   },
   "dependencies": {

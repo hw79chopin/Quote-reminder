@@ -10,17 +10,32 @@
       <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="/quotes-list">Today's quotes</a>
+            <a class=" <%= path === '/quotes-list' ? 'nav-link js-scroll active' : 'nav-link js-scroll' %> " href="/quotes-list">Today's quotes</a>
+          </li>
+          <% if (isAuthenticated) { %>
+          <li class="nav-item">
+            <a class="<%= path === '/search-quotes' ? 'nav-link js-scroll active' : 'nav-link js-scroll'%> " href="/search-quotes">Search quotes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="/search-quotes">Search quotes</a>
+            <a class="<%= path === '/add-quote' ? 'nav-link js-scroll active' : 'nav-link js-scroll' %> " href="/add-quote">Add quotes</a>
+          </li>
+        <% } %> 
+
+        <% if (!isAuthenticated) { %>
+          <li class="nav-item">
+            <a class="<%= path === '/logIn' ? 'nav-link js-scroll active' : 'nav-link js-scroll' %> " href="/logIn">LogIn</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="/add-quote">Add quotes</a>
+            <a class="<%= path === '/signUp' ? 'nav-link js-scroll active' : 'nav-link js-scroll' %>" href="/signUp">SignUp</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="/login">LogIn</a>
-          </li>
+          <% } else { %> 
+            <li class="nav-item">
+              <form action="/logOut" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit" class="nav-link js-scroll">Log Out</button>
+            </form>
+            </li>
+          <% } %> 
         </ul>
       </div>
     </div>
