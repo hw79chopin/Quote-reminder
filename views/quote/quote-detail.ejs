@@ -1,0 +1,36 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+
+  <%- include('../includes/index-navigation.ejs') %>
+  
+  <body id="page-top">
+    <div id="home" class="intro route bg-image" style="background-image: url(/img/background.jpg)">
+      <div class="overlay-itro"></div>
+      <div class="intro-content display-table">
+        <div class="table-cell">
+          <div class="container">
+            <h1 class="quotes-list-quote"><%= quote.quote %> </h1> 
+            <br>
+            <% if ((quote.source !== null) && (quote.source !== undefined)) { %> 
+              <h1 class="quotes-list-detail">출처: <%= quote.source %> </h1> 
+            <% } %> 
+            <% if ((quote.excerpt_date !== null) && (quote.excerpt_date !== undefined)){ %> 
+              <h1 class="quotes-list-detail">발간일/페이지: <%= quote.excerpt_date %> </h1> 
+            <% } %> 
+            <% if ((quote.title !== null) && (quote.title !== undefined)) { %> 
+              <h1 class="quotes-list-detail">제목: <%= quote.title %></h1> 
+            <% } %> 
+            <% if ((quote.speaker !== null) && (quote.speaker !== undefined)) { %> 
+              <h1 class="quotes-list-detail">화자: <%= quote.speaker %></h1> 
+            <% } %> 
+              <h3 class="quotes-list-detail"> </h3> 
+              <h3 class="quotes-list-detail"></h3> 
+              <h3 class="quotes-list-detail"> </h3> 
+          </div>
+          <a href="/edit-quote/<%= quote._id %>?edit=true" class="btn">Edit quote</a>
+        </div>
+      </div>
+    </div>
+    </body>
+    
+<%- include('../includes/end.ejs') %>
